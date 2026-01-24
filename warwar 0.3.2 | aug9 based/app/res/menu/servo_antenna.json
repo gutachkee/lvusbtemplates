@@ -1,0 +1,47 @@
+{
+    "title": "Тюнінг Servo Antenna",
+    "values": [
+        {
+            "id": "servo_antenna.invert_pitch",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Інвертований pitch"
+        },
+        {
+            "id": "servo_antenna.adjusting_rate",
+            "id_type": "config",
+            "type": "step",
+            "title": "Швидкість уточнення (град/с)",
+            "value_type": "int",
+            "min": 2,
+            "max": 10,
+            "step": 1
+        },
+        {
+            "id": "servo_antenna.adjust_pitch_on_distance",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Поправка на висоту наземної станції"
+        },
+        {
+            "id": "servo_antenna.gs_altitude",
+            "id_type": "config",
+            "type": "step",
+            "title": "Висота наземної станції (м)",
+            "value_type": "int",
+            "min": 0,
+            "max": 1000,
+            "step": 10
+        },
+        {
+            "id": "servo_antenna.cruising_speed",
+            "id_type": "config",
+            "type": "step",
+            "title": "Крейсерська швидкість (м/с)",
+            "value_type": "int",
+            "min": 20,
+            "max": 50,
+            "step": 2
+        }
+    ]
+}

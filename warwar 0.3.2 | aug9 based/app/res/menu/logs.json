@@ -1,0 +1,25 @@
+{
+    "title": "Логи",
+    "values": [
+        {
+            "id": "metrics",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Збирати логи"
+        },
+        {
+            "type": "action",
+            "title": "Скопіювати логи",
+            "trigger": "event",
+            "event": "copy_logs_default",
+            "service": "USB"
+        },
+        {
+            "type": "action",
+            "title": "Скопіювати логи (.csv)",
+            "trigger": "event",
+            "event": "copy_logs_csv",
+            "service": "USB"
+        }
+    ]
+}

@@ -1,0 +1,284 @@
+{
+    "type": "submenu",
+    "title": "Канали керування",
+    "values": [
+        {
+            "id": "drone.channel_camera",
+            "id_type": "config",
+            "type": "option",
+            "title": "Активація автопілоту",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_bbox_posx",
+            "id_type": "config",
+            "type": "option",
+            "title": "Позиція цілика по x",
+            "values": [
+                { "key": -1,  "title": "OFF" },
+                { "key": 0,  "title": "CH1" },
+                { "key": 1,   "title": "CH2" },
+                { "key": 2,   "title": "CH3" },
+                { "key": 3,   "title": "CH4" }
+            ]
+        },
+        {
+            "id": "drone.channel_bbox_posy",
+            "id_type": "config",
+            "type": "option",
+            "title": "Позиція цілика по y",
+            "values": [
+                { "key": -1,  "title": "OFF" },
+                { "key": 0,  "title": "CH1" },
+                { "key": 1,   "title": "CH2" },
+                { "key": 2,   "title": "CH3" },
+                { "key": 3,   "title": "CH4" }
+            ]
+        },
+        {
+            "id": "drone.channel_tracking",
+            "id_type": "config",
+            "type": "option",
+            "title": "Підтвердження / захоплення цілі",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_pass_mode",
+            "id_type": "config",
+            "type": "option",
+            "title": "Активація режиму pass",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_hold_mode",
+            "id_type": "config",
+            "type": "option",
+            "title": "Активація режиму hold",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_alt_hold",
+            "id_type": "config",
+            "type": "option",
+            "title": "Утримання висоти (throttle)",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 0,  "title": "CH1" },
+                { "key": 1,  "title": "CH2" },
+                { "key": 2,  "title": "CH3" },
+                { "key": 3,  "title": "CH4" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_azimuth",
+            "id_type": "config",
+            "type": "option",
+            "title": "Зміна азимута",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 0,  "title": "CH1" },
+                { "key": 1,  "title": "CH2" },
+                { "key": 2,  "title": "CH3" },
+                { "key": 3,  "title": "CH4" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_antenna_angle",
+            "id_type": "config",
+            "type": "option",
+            "title": "Зміна кута антени",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_gimbal_x",
+            "id_type": "config",
+            "type": "option",
+            "title": "Горизонтальний поворот підвісу камери",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 0,  "title": "CH1" },
+                { "key": 1,  "title": "CH2" },
+                { "key": 2,  "title": "CH3" },
+                { "key": 3,  "title": "CH4" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_gimbal_y",
+            "id_type": "config",
+            "type": "option",
+            "title": "Вертикальний поворот підвісу камери",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 0,  "title": "CH1" },
+                { "key": 1,  "title": "CH2" },
+                { "key": 2,  "title": "CH3" },
+                { "key": 3,  "title": "CH4" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        },
+        {
+            "id": "drone.channel_menu_hor",
+            "id_type": "config",
+            "type": "option",
+            "title": "Горизонтальний рух в меню",
+            "values": [
+                { "key": -1,  "title": "OFF" },
+                { "key": 0,  "title": "CH1" },
+                { "key": 1,   "title": "CH2" },
+                { "key": 2,   "title": "CH3" },
+                { "key": 3,   "title": "CH4" }
+            ]
+        },
+        {
+            "id": "drone.channel_menu_ver",
+            "id_type": "config",
+            "type": "option",
+            "title": "Вертикальний рух в меню",
+            "values": [
+                { "key": -1,  "title": "OFF" },
+                { "key": 0,  "title": "CH1" },
+                { "key": 1,   "title": "CH2" },
+                { "key": 2,   "title": "CH3" },
+                { "key": 3,   "title": "CH4" }
+            ]
+        },
+        {
+            "id": "drone.channel_drop",
+            "id_type": "config",
+            "type": "option",
+            "title": "Скид",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" },
+                { "key": 12, "title": "CH13/AUX9" },
+                { "key": 13, "title": "CH14/AUX10" },
+                { "key": 14, "title": "CH15/AUX11" },
+                { "key": 15, "title": "CH16/AUX12" }
+            ]
+        }
+    ]
+}

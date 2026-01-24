@@ -1,0 +1,50 @@
+load: true
+
+init:
+  - "rm -rf /tmp/lv"
+  - "mkdir -p /tmp/lv"
+  - "cp -r  /mnt/lv-ext-storage/lv/lv-link /tmp/lv/"
+  - "cp -r  /mnt/lv-ext-storage/lv/lv-vision /tmp/lv/"
+
+  - "touch /home/lv/startup.sh || true"
+
+  # lvv & lvl
+  - "cp /mnt/lv-ext-storage/lv/lv-link/usr/bin/lvl /usr/bin/"
+  - "cp /mnt/lv-ext-storage/lv/lv-vision/usr/bin/lvv /usr/bin/"
+
+  # underdog
+  - "cp -r  /mnt/lv-ext-storage/app/ /tmp/lv/"
+  - "cp -r  /mnt/lv-ext-storage/start_underdog.sh /tmp/lv/"
+
+services:
+  - name: "lv-link"
+    exec: "/tmp/lv/lv-link/usr/bin/lv-link-air"
+    args: ["/tmp/lv/lv-link/etc/lv-link/config.yaml", "/mnt/lv-ext-storage/lv/licenses/lv-link/"]
+    enabled: true
+
+  - name: "lv-vision"
+    exec: "/tmp/lv/lv-vision/usr/bin/lv-vision"
+    args: ["/tmp/lv/lv-vision/etc/lv-vision/config.yaml", "/mnt/lv-ext-storage/lv/licenses/lv-vision/"]
+    enabled: true
+
+postInit:
+  # let the link & vision load it's license and do the startup
+  # + some time for ground station to find the air 
+  - "sleep 20"
+
+  # система доведення +
+  # tmp permission workaround for gst
+  #- "sudo rm -rf ~/.cache"
+  #- "gst-launch-1.0 videotestsrc num-buffers=10 ! testsink"
+  #- "/mnt/lv-ext-storage/start_underdog.sh"
+
+  # collect logs
+  - "cd /tmp && sudo lv-report usb_logs"
+  - "rm -rf /mnt/lv-ext-storage/usb_logs.zip"
+  - "sudo mv /tmp/usb_logs.zip /mnt/lv-ext-storage"
+  - "sync"
+
+  - "echo '---------------------------------------------------------- boot sequence completed ===---'"
+
+# if true than lv-loader won't listen for a new storage to be connected until reboot
+disableLoad: true

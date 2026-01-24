@@ -1,0 +1,15 @@
+{
+  "type": "submenu",
+  "title": "Трекер",
+  "values": [
+    {
+      "id": "tracker.algorythm",
+      "type": "option",
+      "trigger": "event",
+      "values": ["MultiMosseTracker", "MMTNativeTracker", "MultiMosseNativeTracker"],
+      "title": "Алгоритм",
+      "service": "Tracker",
+      "event": "set_algorithm"
+    }
+  ]
+}

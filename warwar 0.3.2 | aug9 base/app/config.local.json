@@ -1,0 +1,121 @@
+{
+  "debug": false,
+  "skip_cli_check": true,
+  "device": "FixedWing",
+  "screen": {
+    "width": 1280,
+    "height": 720
+  },
+  "camera": {
+    "mount_angle": -13,
+    "reference_offset_y": 3,
+    "ae_constraint_mode": "shadows",
+    "ae_metering_mode": "matrix",
+    "contrast": 1.2,
+    "exposure": 0,
+    "gain_max": 80,
+    "noise_reduction_mode": "off",
+    "saturation": 1,
+    "sharpness": 3.0,
+    "fov": [
+      70.955,
+      43.691
+    ],
+    "render": "SDL",
+    "source": "PiCameraSource",
+    "framerate": 40,
+    "width": 1920,
+    "height": 1080,
+    "lores": {
+      "width": 960,
+      "height": 540
+    },
+    "rotate": false,
+    "tuning_disabled": "imx290-83-ir-cut-pri5.json"
+  },
+  "osd": {
+    "enabled": true,
+    "sticks": true,
+    "horizon": true,
+    "engage": true,
+    "detailed_info": true,
+    "fps": true,
+    "aim": true,
+    "target limit": true
+  },
+  "rtsp": {
+    "accelerated": false,
+    "enabled": true,
+    "host": "127.0.0.1",
+    "bitrate": 1800,
+    "threads": 4,
+    "buffer-size": 16384,
+    "port": 5600,
+    "keyframes": 30,
+    "flip": true,
+    "framerate": 30
+  },
+  "mavlink": {
+    "enabled": true,
+    "device": "/dev/ttyAMA3",
+    "dialect": "default"
+  },
+  "drone": {
+    "aim_vertical_pos": 0.57,
+    "attack_angle_min": 14,
+    "timeout": 120,
+    "tracker_auto_update": 0.3,
+    "control": "PyMavlinkControl",
+    "serial_port": "/dev/ttyAMA3",
+    "bbox_correction_type": "relative",
+    "channel_camera": 5,
+    "channel_zoom": 8,
+    "channel_menu": 7,
+    "channel_bbox_posx": 0,
+    "channel_bbox_posy": 1,
+    "compensation_y": 0,
+    "default_throttle": 1900,
+    "throttle_min": 1760,
+    "throttle_max": 1917,
+    "reaction_threshold": 10,
+    "immediate_engage": true,
+    "rc_min_value": 1000,
+    "rc_max_value": 2000,
+    "rc_step": 50,
+    "tuning": {
+      "PX_C": 0.5,
+      "PY_C": 1,
+      "PX": 18,
+      "IX": 3,
+      "DX": 0,
+      "PY": 6.0,
+      "PY_windup": 450,
+      "IY": 6,
+      "DY": 0,
+      "PT": 10,
+      "IT": 0.5,
+      "DT": 0,
+      "pitch_P": 12,
+      "pitch_I": 1.5,
+      "pitch_D": 0,
+      "roll_P": 12,
+      "roll_I": 1.5,
+      "roll_D": 0,
+      "yaw_P": 3,
+      "yaw_I": 0.1,
+      "yaw_D": 0,
+      "ENG": 40
+    },
+    "debug": {
+      "stabilization_only": false,
+      "disable_azimith_compensation": true,
+      "disable_vertical_compensation": false
+    }
+  },
+  "tracker": {
+    "algorythm": "MultiMosseNativeTracker",
+    "default_bbox_size": 45,
+    "count": 3
+  },
+  "last_inflight_update": 1682514803.591112
+}

@@ -1,0 +1,94 @@
+{
+    "title": "Налаштування зуму",
+    "values": [
+        {
+            "id": "zoom.offset",
+            "id_type": "config",
+            "title": "Відступ",
+            "type": "step",
+            "value_type": "int",
+            "min": 0,
+            "max": 100,
+            "step": 5
+        },
+        {
+            "id": "zoom.size",
+            "id_type": "config",
+            "title": "Розмір вікна",
+            "type": "step",
+            "value_type": "int",
+            "min": 100,
+            "max": 400,
+            "step": 10
+        },
+        {
+            "id": "zoom.scale",
+            "id_type": "config",
+            "title": "Масштаб за замовчуванням",
+            "type": "step",
+            "min": 1.0,
+            "max": 5.0,
+            "step": 0.1,
+            "precision": 1
+        },
+        {
+            "id": "drone.channel_zoom",
+            "id_type": "config",
+            "type": "option",
+            "title": "Канал зуму",
+            "values": [
+                { "key": -1, "title": "OFF" },
+                { "key": 4,  "title": "CH5/AUX1" },
+                { "key": 5,  "title": "CH6/AUX2" },
+                { "key": 6,  "title": "CH7/AUX3" },
+                { "key": 7,  "title": "CH8/AUX4" },
+                { "key": 8,  "title": "CH9/AUX5" },
+                { "key": 9,  "title": "CH10/AUX6" },
+                { "key": 10, "title": "CH11/AUX7" },
+                { "key": 11, "title": "CH12/AUX8" }
+            ]
+        },
+        {
+            "id": "zoom.scale_range[0]",
+            "id_type": "config",
+            "title": "Масштаб 1",
+            "type": "step",
+            "min": 1.0,
+            "max": 5.0,
+            "step": 0.1,
+            "precision": 1
+        },
+        {
+            "id": "zoom.scale_range[1]",
+            "id_type": "config",
+            "title": "Масштаб 2",
+            "type": "step",
+            "min": 1.0,
+            "max": 5.0,
+            "step": 0.1,
+            "precision": 1
+        },
+        {
+            "id": "zoom.scale_range[2]",
+            "id_type": "config",
+            "title": "Масштаб 3",
+            "type": "step",
+            "min": 1.0,
+            "max": 4.0,
+            "step": 0.1,
+            "precision": 1
+        },
+        {
+            "id": "zoom.fullscreen",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Повноекранний зум"
+        },
+        {
+            "id": "zoom.disable_roll_stabilization",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Вимкнути кутову стабілізацію"
+        }
+    ]
+}

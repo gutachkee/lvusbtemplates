@@ -1,0 +1,341 @@
+{
+    "title": "Тюнінг StableLink",
+    "values": [
+        {
+            "type": "submenu",
+            "title": "Утримування позиції",
+            "values": [
+                {
+                    "id": "drone.position_hold.acc_pid[0]",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "PID-контролер прискорення (PTerm)",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "value_type": "int"
+                },
+                {
+                    "id": "drone.position_hold.velocity_pid[0]",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "PID-контролер швидкості (PTerm)",
+                    "min": 0.0,
+                    "max": 1.5,
+                    "step": 0.01,
+                    "precision": 2
+                },
+                {
+                    "id": "drone.position_hold.position_pid[0]",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "PID-контролер позиції (PTerm)",
+                    "min": 0.0,
+                    "max": 1.5,
+                    "step": 0.01,
+                    "precision": 2
+                },
+                {
+                    "id": "drone.position_hold.wind_ukf_params.process_cov_comp",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Активність компенсації вітру",
+                    "min": 0.0,
+                    "max": 0.2,
+                    "step": 0.001,
+                    "precision": 3
+                },
+                {
+                    "id": "drone.position_hold.max_velocity",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Макс. горизонтальна швидкість",
+                    "min": 0.0,
+                    "max": 5.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "type": "submenu",
+                    "title": "Утримування позиції (10-100м)",
+                    "values": [
+                        {
+                            "id": "drone.position_hold.alt_configs.10.velocity_pid[0]",
+                            "id_type": "config",
+                            "type": "step",
+                            "title": "PID-контролер швидкості (PTerm)",
+                            "min": 0.0,
+                            "max": 1.5,
+                            "step": 0.01,
+                            "precision": 2
+                        },
+                        {
+                            "id": "drone.position_hold.alt_configs.10.position_pid[0]",
+                            "id_type": "config",
+                            "type": "step",
+                            "title": "PID-контролер позиції (PTerm)",
+                            "min": 0.0,
+                            "max": 1.5,
+                            "step": 0.01,
+                            "precision": 2
+                        }
+                    ]
+                },
+                {
+                    "type": "submenu",
+                    "title": "Утримування позиції (100-1000м)",
+                    "values": [
+                        {
+                            "id": "drone.position_hold.alt_configs.100.velocity_pid[0]",
+                            "id_type": "config",
+                            "type": "step",
+                            "title": "PID-контролер швидкості (PTerm)",
+                            "min": 0.0,
+                            "max": 1.5,
+                            "step": 0.01,
+                            "precision": 2
+                        },
+                        {
+                            "id": "drone.position_hold.alt_configs.100.position_pid[0]",
+                            "id_type": "config",
+                            "type": "step",
+                            "title": "PID-контролер позиції (PTerm)",
+                            "min": 0.0,
+                            "max": 1.5,
+                            "step": 0.01,
+                            "precision": 2
+                        }
+                    ]
+                },
+                {
+                    "type": "submenu",
+                    "title": "Утримування позиції (1000м+)",
+                    "values": [
+                        {
+                            "id": "drone.position_hold.alt_configs.1000.velocity_pid[0]",
+                            "id_type": "config",
+                            "type": "step",
+                            "title": "PID-контролер швидкості (PTerm)",
+                            "min": 0.0,
+                            "max": 1.5,
+                            "step": 0.01,
+                            "precision": 2
+                        },
+                        {
+                            "id": "drone.position_hold.alt_configs.1000.position_pid[0]",
+                            "id_type": "config",
+                            "type": "step",
+                            "title": "PID-контролер позиції (PTerm)",
+                            "min": 0.0,
+                            "max": 1.5,
+                            "step": 0.01,
+                            "precision": 2
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "submenu",
+            "title": "Утримування висоти",
+            "values": [
+                {
+                    "id": "drone.hover_throttle",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Початковий hover throttle",
+                    "min": 1000,
+                    "max": 2000,
+                    "step": 1,
+                    "value_type": "int"
+                },
+                {
+                    "id": "drone.alt_hold.acc_pid[0]",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "PID-контролер прискорення (PTerm)",
+                    "min": 0,
+                    "max": 100,
+                    "step": 1,
+                    "value_type": "int"
+                },
+                {
+                    "id": "drone.alt_hold.velocity_pid[0]",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "PID-контролер швидкості (PTerm)",
+                    "min": 0.0,
+                    "max": 1.0,
+                    "step": 0.01,
+                    "precision": 2
+                },
+                {
+                    "id": "drone.alt_hold.velocity_pid[1]",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "PID-контролер швидкості (ITerm)",
+                    "min": 0.0,
+                    "max": 1.0,
+                    "step": 0.01,
+                    "precision": 2
+                },
+                {
+                    "id": "drone.alt_hold.position_pid[0]",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "PID-контролер висоти (PTerm)",
+                    "min": 0.0,
+                    "max": 1.0,
+                    "step": 0.01,
+                    "precision": 2
+                }
+            ]
+        },
+        {
+            "type": "submenu",
+            "title": "Підйом, спуск, посадка",
+            "values": [
+                {
+                    "id": "drone.alt_hold.max_velocity",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Макс. швидкість підйому (0-20м)",
+                    "min": 0.0,
+                    "max": 20.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "id": "drone.alt_hold.alt_configs.20.max_velocity",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Макс. швидкість підйому (20-100м)",
+                    "min": 0.0,
+                    "max": 20.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "id": "drone.alt_hold.alt_configs.100.max_velocity",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Макс. швидкість підйому (100м+)",
+                    "min": 0.0,
+                    "max": 20.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "id": "drone.alt_hold.max_descent_velocity",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Макс. швидкість спуску (0-20м)",
+                    "min": 0.0,
+                    "max": 20.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "id": "drone.alt_hold.alt_configs.20.max_descent_velocity",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Макс. швидкість спуску (20-100м)",
+                    "min": 0.0,
+                    "max": 20.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "id": "drone.alt_hold.alt_configs.100.max_descent_velocity",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Макс. швидкість спуску (100м+)",
+                    "min": 0.0,
+                    "max": 20.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "id": "drone.alt_hold.altitude_step",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Крок зміни висоти (0-20м)",
+                    "min": 1,
+                    "max": 20.0,
+                    "step": 1,
+                    "value_type": "int"
+                },
+                {
+                    "id": "drone.alt_hold.alt_configs.20.altitude_step",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Крок зміни висоти (20-100м)",
+                    "min": 1,
+                    "max": 50,
+                    "step": 1,
+                    "value_type": "int"
+                },
+                {
+                    "id": "drone.alt_hold.alt_configs.100.altitude_step",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Крок зміни висоти (100м+)",
+                    "min": 1,
+                    "max": 100,
+                    "step": 1,
+                    "value_type": "int"
+                },
+                {
+                    "id": "drone.alt_hold.takeoff_altitude",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Поріг висоти для зльоту",
+                    "min": 0.1,
+                    "max": 5.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "id": "drone.alt_hold.target_altitude",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Висота підйому при авто-злеті",
+                    "min": 0.1,
+                    "max": 5.0,
+                    "step": 0.1,
+                    "precision": 1
+                },
+                {
+                    "id": "drone.alt_hold.landing_alt_threshold",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Поріг висоти для посадки",
+                    "min": 0.1,
+                    "max": 1.0,
+                    "step": 0.01,
+                    "precision": 2
+                },
+                {
+                    "id": "drone.lidar_alt_limit",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Висота вимкнення LiDAR",
+                    "min": -1,
+                    "max": 200,
+                    "step": 1,
+                    "value_type": "int"
+                },
+                {
+                    "id": "drone.min_battery_voltage",
+                    "id_type": "config",
+                    "type": "step",
+                    "title": "Напруга батареї для аварійної посадки",
+                    "min": -1.0,
+                    "max": 48.0,
+                    "step": 0.1,
+                    "precision": 1
+                }
+            ]
+        }
+    ]
+}

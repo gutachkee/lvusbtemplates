@@ -1,0 +1,19 @@
+{
+  "type": "submenu",
+  "title": "Тип камери",
+  "values": [
+    {
+      "id": "device_type",
+      "type": "option",
+      "title": "Тип камери",
+      "values": [
+        "Ніч",
+        "День"
+      ],
+      "trigger": "event",
+    "event": "change_device",
+    "service": "Device"
+    }
+  ]
+}
+

@@ -24,7 +24,7 @@ services:
 
   - name: "lv-vision"
     exec: "/tmp/lv/lv-vision/usr/bin/lv-vision"
-    args: ["/tmp/lv/lv-vision/etc/lv-vision/config.yaml", "/mnt/lv-ext-storage/lv/licenses/lv-vision/"]
+    args: ["--config", "/tmp/lv/lv-vision/etc/lv-vision/config.yaml", "--license", "/mnt/lv-ext-storage/lv/licenses/lv-vision/"]
     enabled: true
 
 postInit:

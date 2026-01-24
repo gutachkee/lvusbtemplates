@@ -1,7 +1,7 @@
 air:
   adapter: wlan0
 
-  bindPhrase: lv-air
+  bindPhrase: lv-link
   frequency: 5500
 
   # Comment out when using setup with repeater

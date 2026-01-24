@@ -3,6 +3,8 @@ add_test_source: false
 
 # USB/UVC cameras configuration
 v4l2:
+  enabled: false
+
   # lv-vision will try to find the closest possible configuration
   # to setup the v4l2 camera with
   # default configuration is 1080p/MJPEG/30fps
@@ -17,31 +19,59 @@ v4l2:
 
   max_cameras_count: 3
 
-libcamera:
-  - path: "/base/axi/pcie@120000/rp1/i2c@88000/imx290@1a"
-    enabled: true
+  usb_filter:
+    enabled: false
+    allowed: [ usb2_upper, usb3_lower ]
 
+libcamera:
+  # when enabled, vision will add a single libcamera instance to camera list;
+  # the camera will be autodetected by gst itself when the pipeline is started
+  autodetect:
+    enabled: true
     width: 1920
     height: 1080
     fps: 30
 
-    is_front: true
+    is_front: false
+
+  cameras:
+    - path: "/base/axi/pcie@1000120000/rp1/i2c@88000/imx290@1a"
+      enabled: true
+
+      width: 1920
+      height: 1080
+      fps: 30
+
+      is_front: false
+
+    - path: "/base/axi/pcie@120000/rp1/i2c@88000/imx477@1a"
+      enabled: false
+
+      width: 1920
+      height: 1080
+      fps: 30
+
+      is_front: false
 
 # IP cameras configurations
 # this is not set by default
 rtsp:
-  # - url: "rtsp://192.168.144.25:8554/main.264" # required
-    # codec: "h264"                              # required
+  - url: "rtsp://192.168.144.25:8554/main.264" # required
+    enabled: false                             # required
+    codec: "h264"                              # required
 
     # means that lv won't transcode the stream, only redirect to the dest address,
     # so bitrate/maxKeyFramePer control & recording features won't be available in this case
-    # passthrough: false
+    passthrough: false
 
     # front cameras comes first
-    # is_front: false
+    is_front: false
 
-# will use hardware codec where possible
-prefer_hardware_codecs: false
+# if true, stream will start on the app's startup
+stream_on: true
+
+# set to true if the source produces non-i420 formatted frames
+use_converter: false
 
 encoder:
   # available encoders:
@@ -54,6 +84,9 @@ encoder:
 
   # the max frames count per key frame
   max_key_frame_period: 90
+
+  # will use hardware codec where possible
+  prefer_hardware: false
 
 presets:
   - name: "ll"
@@ -83,7 +116,7 @@ dest:
     ip: "192.168.27.2"
     port: 5601
 
-  fps_limit: 30
+  # fps_limit: 30
 
 rec:
   # recorder will save one frame per [period] seconds
@@ -160,6 +193,21 @@ rc:
     mapping:
       1: [1800, 2200]
       0: [800, 1800]
+
+    # required for latching & momentary switches
+    on_threshold: 990 # inclusive
+
+  # zoomed center crop for streaming camera in picture-in-picture mode
+  zoom:
+    enabled: true
+
+    channel: 9
+
+    type: map
+
+    mapping:
+      0: [800, 1400]
+      1: [1400, 2200]
 
     # required for latching & momentary switches
     on_threshold: 990 # inclusive
@@ -243,3 +291,18 @@ rc:
     - name: vision & underdog switch
       channel: 8
       script: /tmp/lv/lv-vision/usr/bin/vision_underdog_switch.sh
+
+osd:
+  enabled: false
+
+  # set true to use Cairo under the hood, still under development
+  use_graphics_overlay: false
+
+cmd:
+  enabled: true
+  port: 6969
+
+exp:
+  dyn_bitrate:
+    enabled: false
+    port: 27020

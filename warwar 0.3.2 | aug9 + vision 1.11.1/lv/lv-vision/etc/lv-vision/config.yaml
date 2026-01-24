@@ -293,7 +293,7 @@ rc:
       script: /tmp/lv/lv-vision/usr/bin/vision_underdog_switch.sh
 
 osd:
-  enabled: false
+  enabled: true
 
   # set true to use Cairo under the hood, still under development
   use_graphics_overlay: false

@@ -1,0 +1,308 @@
+# the test source will be added to the front of the sources list
+add_test_source: false
+
+# USB/UVC cameras configuration
+v4l2:
+  enabled: false
+
+  # lv-vision will try to find the closest possible configuration
+  # to setup the v4l2 camera with
+  # default configuration is 1080p/MJPEG/30fps
+  # supported formats:
+  # - mjpeg (default)
+  # - yuyv
+  prefered_config:
+    width: 1920
+    height: 1080
+    format: "mjpeg"
+    fps: 30
+
+  max_cameras_count: 3
+
+  usb_filter:
+    enabled: false
+    allowed: [ usb2_upper, usb3_lower ]
+
+libcamera:
+  # when enabled, vision will add a single libcamera instance to camera list;
+  # the camera will be autodetected by gst itself when the pipeline is started
+  autodetect:
+    enabled: true
+    width: 1920
+    height: 1080
+    fps: 30
+
+    is_front: false
+
+  cameras:
+    - path: "/base/axi/pcie@1000120000/rp1/i2c@88000/imx290@1a"
+      enabled: true
+
+      width: 1920
+      height: 1080
+      fps: 30
+
+      is_front: false
+
+    - path: "/base/axi/pcie@120000/rp1/i2c@88000/imx477@1a"
+      enabled: false
+
+      width: 1920
+      height: 1080
+      fps: 30
+
+      is_front: false
+
+# IP cameras configurations
+# this is not set by default
+rtsp:
+  - url: "rtsp://192.168.144.25:8554/main.264" # required
+    enabled: false                             # required
+    codec: "h264"                              # required
+
+    # means that lv won't transcode the stream, only redirect to the dest address,
+    # so bitrate/maxKeyFramePer control & recording features won't be available in this case
+    passthrough: false
+
+    # front cameras comes first
+    is_front: false
+
+# if true, stream will start on the app's startup
+stream_on: true
+
+# set to true if the source produces non-i420 formatted frames
+use_converter: false
+
+encoder:
+  # available encoders:
+  # - h264 (default)
+  # - h265
+  name: "h264"
+
+  # in kbps
+  bitrate: 2800
+
+  # the max frames count per key frame
+  max_key_frame_period: 90
+
+  # will use hardware codec where possible
+  prefer_hardware: false
+
+presets:
+  - name: "ll"
+    encoder: "h264"
+    max_key_frame_period: 15
+    protocol: "udp"
+
+  - name: "hq"
+    encoder: "h264"
+    max_key_frame_period: 100
+    protocol: "tcp"
+
+dest:
+  # available protocols:
+  # - udp (using RTP) (default)
+  # - tcp (using TS)
+  protocol: "udp"
+
+  udp:
+    ip: "127.0.0.1"
+    port: 5600
+
+  # this is optional in case when udp/tcp switch is not set up
+  # and protocol == "udp"
+  # lvv will create tcp server & bind it to following address:
+  tcp:
+    ip: "192.168.27.2"
+    port: 5601
+
+  # fps_limit: 30
+
+rec:
+  # recorder will save one frame per [period] seconds
+  period: 2
+
+mavlink:
+  # either udp or uart can be enabled
+  uart:
+    enabled: false
+
+    path: /dev/ttyAMA0
+    baud: 57600
+
+  udp:
+    enabled: true
+
+    ip: 127.0.0.1
+    port: 14541
+
+  telemetry:
+    enabled: true
+    # in seconds
+    updatePeriod: 5
+
+# remote controller settings
+rc:
+  # camera switch feature
+  src:
+    # all rc features are enabled by default, but in case when some feature
+    # should not be controlled by RC, use enabled: false
+    enabled: false
+
+    # pwm channel index from radio controller
+    # default is 6
+    channel: 6
+
+    # possible types:
+    # - rotatory (default)
+    #   makes the entire channel range be divided by source count
+    #   for example: if there are two sources available, the first source will be used when
+    #   rc channel value is in the first half of rc channel range
+
+    # - momentary
+    #   will switch to the next available source
+    #   when rc channel value became >= rc channel's on_threshold value
+
+    # - map
+    #   will switch the src when the rc channel value is in the range provided by the config
+    #   see example below
+    type: map
+
+    # each feature could have own rc channel range
+    range:
+      min: 983  # inclusive
+      max: 2007 # exclusive
+
+    # .. and own on threshould value
+    # for src switch feature, on threshould is applicable only in case of using momentary switch
+    on_threshold: 1200 # inclusive
+
+    # should be used with type: map
+    mapping:
+      0: [983, 1300]
+      1: [1300, 2007]
+
+  # network stream on/off switch
+  stream_on:
+    enabled: true
+
+    channel: 8
+
+    type: map
+
+    mapping:
+      1: [1800, 2200]
+      0: [800, 1800]
+
+    # required for latching & momentary switches
+    on_threshold: 990 # inclusive
+
+  # zoomed center crop for streaming camera in picture-in-picture mode
+  zoom:
+    enabled: true
+
+    channel: 9
+
+    type: map
+
+    mapping:
+      0: [800, 1400]
+      1: [1400, 2200]
+
+    # required for latching & momentary switches
+    on_threshold: 990 # inclusive
+
+  bitrate:
+    enabled: false
+
+    channel: 12
+
+    # it supports map switch too
+    type: rotatory
+
+    # required for rotatory switch
+    range:
+      min: 983  # inclusive
+      max: 2007 # exclusive
+
+    # required for rotatory switch
+    value:
+      min: 500
+      max: 2500
+
+    # required for map switch
+    mapping:
+      800:  [800,  1000]
+      1000: [1000, 1100]
+      1500: [1100, 1200]
+      1500: [1200, 1300]
+      1750: [1300, 1400]
+      2000: [1400, 1500]
+      2000: [1500, 1600]
+      2500: [1600, 1700]
+      3000: [1700, 1800]
+      3500: [1800, 2100]
+
+  rec:
+    enabled: false
+
+    channel: 9
+
+    # possible types:
+    # - latching (default)
+    #   it will be on when the rc channel value is >= rc channel's on threshould
+    # - momentary
+    #   it will switch on/off in the moment when rc channel's value changes from < on_threshold to >= on_threshold
+    type: latching
+
+    range:
+      min: 983  # inclusive
+      max: 2007 # exclusive
+
+    on_threshold: 1200 # inclusive
+
+  presets:
+    enabled: false
+    channel: 10
+    type: map
+
+    mapping:
+      0: [983, 1300]
+      1: [1300, 2007]
+
+  rotate:
+    enabled: false
+    channel: 6
+
+    # momentary is available too, it will iterate over all possible rotation
+    type: map
+
+    # momentary specific
+    on_threshold: 1200 # inclusive
+
+    # map specific
+    mapping:
+      0: [900, 1300]
+      90: [1300, 1600]
+      180: [1600, 1900]
+      270: [1900, 2100]
+
+  shell:
+    - name: vision & underdog switch
+      channel: 8
+      script: /tmp/lv/lv-vision/usr/bin/vision_underdog_switch.sh
+
+osd:
+  enabled: true
+
+  # set true to use Cairo under the hood, still under development
+  use_graphics_overlay: false
+
+cmd:
+  enabled: true
+  port: 6969
+
+exp:
+  dyn_bitrate:
+    enabled: false
+    port: 27020

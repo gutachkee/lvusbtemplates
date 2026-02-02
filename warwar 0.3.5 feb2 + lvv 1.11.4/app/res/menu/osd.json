@@ -1,0 +1,95 @@
+{
+    "title": "Елементи OSD",
+    "values": [
+        {
+            "id": "osd.cross",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Цілик"
+        },
+        {
+            "id": "osd.engage",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Кут ураження"
+        },
+        {
+            "id": "osd.nadir",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Надир"
+        },
+        {
+            "id": "osd.sticks",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Стіки"
+        },
+        {
+            "id": "osd.sticks_text",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Стіки (текст)"
+        },
+        {
+            "id": "osd.detailed_info",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Детальна інформація"
+        },
+        {
+            "id": "osd.tuning_info",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Деталі тюнінгу"
+        },
+        {
+            "id": "osd.sl_info",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Деталі StableLink"
+        },
+        {
+            "id": "osd.nav_info",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Деталі навігації"
+        },
+        {
+            "id": "osd.fps",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "FPS"
+        },
+        {
+            "id": "osd.gimbal_angles",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Кути підвісу камери"
+        },
+        {
+            "id": "osd.ground_station",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Наземна станція"
+        },
+        {
+            "id": "osd.body_axis",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Вісь борта"
+        },
+        {
+            "id": "osd.pitch_axis",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Вертикальна вісь"
+        },
+        {
+            "id": "osd.yaw_axis",
+            "id_type": "config",
+            "type": "toggle",
+            "title": "Горизонтальна вісь"
+        }
+    ]
+}

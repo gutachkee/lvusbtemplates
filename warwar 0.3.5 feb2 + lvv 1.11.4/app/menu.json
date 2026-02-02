@@ -1,0 +1,47 @@
+{
+    "config": {
+        "back_title": "[< Назад]",
+        "save_title": "[Зберегти]",
+        "save_and_reboot_title": "[Зберегти та перезавантажити]",
+        "scroll_up_hint": "Приховано: {{items}}",
+        "scroll_down_hint": "Приховано: {{items}}"
+    },
+    "items": [
+        {
+            "type": "submenu",
+            "title": "Info",
+            "values": [
+                {
+                    "id": "app_version",
+                    "type": "label",
+                    "title": "Версія"
+                },
+                {
+                    "id": "config_hash",
+                    "type": "label",
+                    "title": "Хеш конфігу"
+                }
+            ]
+        },
+        {
+            "type": "submenu",
+            "title": "Дії",
+            "values": [
+                {
+                    "type": "action",
+                    "title": "Зберегти конфігурацію",
+                    "trigger": "event",
+                    "event": "save_config",
+                    "service": "USB"
+                },
+                {
+                    "type": "action",
+                    "title": "Скасувати зміни налаштувань",
+                    "trigger": "event",
+                    "event": "reset_overrides",
+                    "service": "Config"
+                }
+            ]
+        }
+    ]
+}

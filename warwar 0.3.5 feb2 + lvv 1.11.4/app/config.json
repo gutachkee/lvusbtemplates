@@ -1,0 +1,253 @@
+{
+    "debug": false,
+    "coredump": false,
+    "reload_config": false,
+    "use_blackbox": false,
+    "metrics": [],
+    "device": "LoiterQuad",
+    "restart_timeout": null,
+    "always_send_rc": true,
+    "screen": {
+        "width": 720,
+        "height": 575,
+        "sdl_videodriver": "kmsdrm"
+    },
+    "osd": {
+        "gimbal_angles": false,
+        "pitch_axis": false,
+        "roll_axis": false,
+        "body_axis": false,
+        "cross": true,
+        "enabled": true,
+        "sticks": false,
+        "sticks_text": false,
+        "horizon": true,
+        "engage": true,
+        "detailed_info": false,
+        "nav_info": false,
+        "fps": false,
+        "screen_center": false,
+        "aim": false,
+        "target_limit": true
+    },
+    "camera": {
+        "exposure": 0,
+        "gain": 0,
+        "contrast": 1.0,
+        "saturation": 1.0,
+        "sharpness": 1.0,
+        "noise_reduction_mode": "fast",
+        "metering_mode": "centre_weighted",
+        "constraint_mode": "normal",
+        "fov": [160, 90],
+        "framerate": 30,
+        "tracker_stream_name": "lores",
+        "mount_angle": 5,
+        "reference_offset_y": 0,
+        "rotate": false,
+        "source": "PiCameraSource",
+        "tuning": null,
+        "height": 1150,
+        "width": 1440,
+        "lores": {
+            "width": 720,
+            "height": 575
+        }
+    },
+    "siyi": {
+        "enabled": false,
+        "camera_ip": "192.168.144.25",
+        "mode": "fpv",
+        "tracking_enabled": false,
+        "tuning": {
+            "yaw_P": 2,
+            "yaw_I": 0.1,
+            "yaw_D": 0,
+            "pitch_P": 2,
+            "pitch_I": 0.1,
+            "pitch_D": 0
+        }
+    },
+    "rtsp": {
+        "enabled": false,
+        "host": "0.0.0.0",
+        "protocol": "udp",
+        "accelerated": true,
+        "width": 1280,
+        "height": 720,
+        "framerate": 30
+    },
+    "servo_antenna": {
+        "enabled": false,
+        "invert_angle": false,
+        "invert_pitch": false,
+        "pitch_limit_angle": 45,
+        "pitch_init_correction": 0,
+        "gs_altitude": 0,
+        "adjust_pitch_on_distance": false,
+        "cruising_speed": 22,
+        "osd_cover_angle": 60,
+        "adjusting_rate": 5,
+        "threshold": 10,
+        "gpio_pin_x": 18,
+        "gpio_pin_y": 13,
+        "servo_frequency": 50,
+        "servo_pwm_min": 561,
+        "servo_pwm_max": 2420,
+        "use_hardware_pwm": true
+    },
+    "navigation": {
+        "enabled": false,
+        "process_cov_pos": 0.15,
+        "process_cov_vel": 0.2,
+        "process_cov_acc": 0.2,
+        "meas_cov_acc": 4.5,
+        "meas_cov_alt": 0.5,
+        "meas_cov_gps_pos": 0.1,
+        "meas_cov_gps_alt": 0.1,
+        "meas_cov_gps_vel": 0.1
+    },
+    "blob_detection": {
+        "enabled": false,
+        "params": {
+            "frames_to_update": 60,
+            "brightness_thresh": 0.5,
+            "min_blob_size": 10
+        },
+        "preview": false,
+        "preview_scale": 1
+    },
+    "ir_filter": {
+        "enabled": false,
+        "bus_number": 10,
+        "device_address": 52,
+        "refresh_interval": 30
+    },
+    "recorder": {
+        "path": "/home/uapi/records/",
+        "workers": 3,
+        "queue_size": 6,
+        "compression_level": 0
+    },
+    "mavlink": {
+        "enabled": false,
+        "system_id": 1,
+        "component_id": 191,
+        "gs_system_id": 255,
+        "gs_component_id": 255,
+        "device": "udpin:127.0.0.1:14551",
+        "baud": 115200,
+        "dialect": "default"
+    },
+    "display_port": {
+        "enabled": false,
+        "serial_port": "/dev/ttyAMA0",
+        "baud": 115200
+    },
+    "drone": {
+        "disable_roll_compensation": true,
+        "pitch_to_throttle": 0,
+        "descent_to_throttle": 0,
+        "attack_angle": null,
+        "attack_angle_min": 10,
+        "heading_reset_threshold": 10,
+        "bbox_correction_type": "relative",
+        "channel_attack_angle": null,
+        "channel_bbox": null,
+        "channel_bbox_posx": 7,
+        "channel_bbox_posy": 11,
+        "channel_camera": 5,
+        "channel_camera_mount": null,
+        "channel_menu": null,
+        "channel_camera_record": null,
+        "channel_pass_mode": null,
+        "channel_tracking": 9,
+        "channel_zoom": 8,
+        "channel_osd_blackout": null,
+        "channel_menu_hor": 0,
+        "channel_menu_ver": 1,
+        "control": "MspControl",
+        "immediate_engage": false,
+        "forward_angle_default": 15,
+        "forward_angle_min": 5,
+        "default_zoom": 0,
+        "hover_throttle": 1650,
+        "max_pitch_angle": null,
+        "rc_min_value": 1000,
+        "rc_max_value": 2000,
+        "rc_step": 50,
+        "reaction_threshold": 10,
+        "serial_port": "/dev/serial0",
+        "throttle_max": 1650,
+        "throttle_min": 1200,
+        "mavlink_heartbeat_rate": 5,
+        "mavlink_attitude_rate": 30,
+        "mavlink_imu_rate": 30,
+        "mavlink_altittude_rate": 20,
+        "mavlink_rc_rate": 25,
+        "osd_blackout_trigger": "high",
+        "lidar_alt_limit": 100,
+        "tuning": {
+            "PX_min": null,
+            "PX": 0.4,
+            "IX": 0.05,
+            "DX": 0,
+            "PX_C": 0.2,
+            "IX_C": 0,
+            "DX_C": 0,
+            "PY": 0.15,
+            "IY": 0.03,
+            "DY": 0,
+            "PT": 12,
+            "IT": 1.5,
+            "DT": 0,
+            "pitch_P": 0.8,
+            "pitch_I": 0.05,
+            "pitch_D": 0,
+            "roll_P": 3,
+            "roll_I": 0.5,
+            "roll_D": 0,
+            "yaw_P": 1,
+            "yaw_I": 0.1,
+            "yaw_D": 0,
+            "pitch_rate_limit": 150
+        },
+        "failsafe": {
+            "altitude_increase": 10
+        },
+        "debug": {
+            "fixed_pitch_engage": false,
+            "stabilization_only": false,
+            "disable_azimith_compensation": false,
+            "disable_vertical_compensation": false
+        },
+        "alt_hold": {
+            "position_pid": [0.25, 0, 0],
+            "windup": 200
+        },
+        "position_hold": {
+            "position_pid": [0.2, 0, 0],
+            "velocity_pid": [1.9, 0.41, 0.1],
+            "max_velocity": 3.0,
+            "max_rc_rate": 100,
+            "rate_windup_guard": 120
+        }
+    },
+    "tracker": {
+        "algorythm": [
+            "MultiMosseTracker"
+        ],
+        "default_bbox_size": 20
+    },
+    "zoom": {
+        "offset": 10,
+        "size": 250,
+        "scale": 1.0,
+        "scale_range": [1.0, 1.5, 3.0],
+        "show_on_auto": true,
+        "fullscreen": false
+    },
+    "menu": {
+        "submenus": ["osd", "picamera", "logs"]
+    }
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=Lastivka Vision streaming service
+After=network.target
+StartLimitInterval=0
+StartLimitBurst=0
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/lv-vision
+Restart=always
+RestartSec=1
+User=root
+
+[Install]
+WantedBy=multi-user.target
